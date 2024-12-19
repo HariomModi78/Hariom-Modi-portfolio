@@ -1,0 +1,343 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+}
+.main{
+    height:100vh;
+    width:100vw;
+    /* border:1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+#header{
+    height:10vh;
+    width:30vw;
+    /* border:1px solid black; */
+    display: flex;
+    position:fixed;
+}
+.headerBox{
+    height:100%;
+    width:calc(100%/3);
+    /* border:1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+}
+#page1{
+    height:100vh;
+    width:100vw;
+    /* border:3px solid green; */
+    background:radial-gradient(rgb(5, 14, 67),rgb(2, 17, 30),rgb(1, 3, 7));
+    display: flex;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:30px;
+}
+
+.headerBox:hover{
+    text-decoration: underline;
+}
+#home{
+    height:100vh;
+    width:10vw;
+    /* border:2px solid yellow; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:30px;
+}
+#home .linkedin{
+    color: white;
+}
+
+#page1p1{
+    height:100vh;
+    width:50vw;
+    /* border:1px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.greeting{
+    color:white;
+    display: flex;
+    /* border:2px solid yellow; */
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.name{
+    padding-left: 4px;
+    color:aqua;
+
+    /* filter:drop-shadow(0 0 5px aqua); */
+}
+#page1:hover .greeting{
+    animation: write 3s ease-out forwards;
+}
+@keyframes write{
+    0%{
+        width:0%;
+    }
+    100%{
+        width:100%;
+        
+    }
+}
+.heading{
+    color:aqua;
+    padding: 15px;
+    text-shadow: 10px 5px 1px black;
+}
+.paragraph{
+    padding: 15px;
+    color:white;
+    font-size:15px;
+    font-size:20px;
+}
+#button{
+    height:8%;
+    /* border:2px solid yellow; */
+    padding: 15px;
+}
+.resume{
+    height:100%;
+    width:18%;
+    margin-right: 20px;
+    background-color: aqua;
+    border:transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.resume a{
+    font-size: 13px;
+    color:black;
+    text-decoration: none;
+}
+.resume:hover{
+    box-shadow: 0 0 10px aqua;
+}
+.viewProject:hover{
+    box-shadow: 0 0 10px aqua;
+
+}
+.viewProject{
+    height:100%;
+    width:23%;
+    border:2px solid aqua;
+    background-color: transparent;
+    color:aqua;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.viewProject a{
+    color:aqua;
+    font-size: 13px;
+    text-decoration: none;
+}
+#page1p2{
+    height:100vh;
+    width:50vw;
+    /* border:1px solid yellow; */
+    display: flex;
+    align-items: center;
+}
+#logo{
+    
+    margin-left:10%;
+    height:60%;
+    width:58%;
+    border-radius: 50%;
+    border: 7px solid;
+    /* filter:drop-shadow(0px 0px 10px aqua); */
+    box-shadow: -5px -10px 20px  lightseagreen ,10px 5px 20px  lightseagreen;
+    border-color:#fff;
+    /* box-shadow: 0 0 1000px aqua; */
+    /* 0 0 7000px aqua,
+    0 0 7000px aqua,
+    0 0 7000px aqua,
+    0 0 7000px aqua; */
+    animation: blow 2s ease-in 1ms forwards;
+}
+#logo{
+    overflow: hidden;
+}
+#logo img{
+    height:145%;
+    width:115%;
+    object-fit: cover;
+}
+@keyframes blow {
+    0%{
+        
+    }
+    100%{
+        box-shadow: 0 0 1000px aqua;
+    }
+}
+/* page2 */
+.page2{
+    height:100vh;
+    width:100vw;
+    background: radial-gradient(rgb(5, 14, 67),rgb(2, 17, 30),rgb(1, 3, 7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about{
+    height: 65%;
+    width:40%;
+    /* border:2px solid yellow; */
+    border-radius: 20px;
+    /* transform: rotateY(-20deg); */
+    /* box-shadow: 0 0 50px rgb(8, 8, 90); */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    backdrop-filter: blur(100px);
+}
+.about p{
+    color:white;
+    padding:20px;
+    line-height: 30px;
+    overflow: hidden;
+}
+.about:hover  p{
+    animation:cover 3s ease-out forwards;
+}
+@keyframes cover{
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.about h1{
+    color:aqua;
+    padding:10px;
+}
+.skill{
+    margin-left:5%;
+    height: 65%;
+    width:40%;
+    /* border:2px solid yellow; */
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgb(8, 8, 90);
+    display: flex;
+    
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    backdrop-filter: blur(100px);
+}
+.page2:hover .skill{
+    animation: split 3s ease-out backwards;
+}
+.skill h1{
+    color:aqua;
+    padding:10px;
+}
+.skill p{
+    color:white;
+    padding:10px;
+    line-height: 30px;
+}
+.skill ul{
+    color:white;
+    width:30%;
+    /* border:1px solid yellow; */
+    margin-left: -55%;
+    line-height: 30px;
+}
+/* page 3 */
+#page3{
+    height:100vh;
+    width:150vw;
+    background: radial-gradient(rgb(5, 14, 67),rgb(2, 17, 30),rgb(1, 3, 7));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.first{
+    height:40%;
+    width:100%;
+    /* border:2px solid yellow; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+
+}
+.fproject{
+    height: 85%;
+    width:calc(100%/6);
+    /* border:2px solid white; */
+
+    margin-left: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    animation: fslide 7s alternate infinite;
+}
+@keyframes fslide{
+0%{
+    transform: translateX(-100%);
+    rotate: 0deg;
+}
+100%{
+    transform: translateX(100%);
+    rotate:1deg;
+}
+}
+.second{
+    height:40%;
+    width:100%;
+    /* border:2px solid yellow; */
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+.sproject{
+    height: 85%;
+    width:calc(100%/6);
+    /* border:2px solid white; */
+    margin-left: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(100px);
+    animation:sslide 7s alternate infinite;
+}
+@keyframes sslide{
+    0%{
+        transform: translateX(150%);
+        rotate: 0deg;
+    }
+    100%{
+        transform: translateX(-100%);
+        rotate: -1deg;
+    }
+    }
+
+.fproject{
+    color:white;
+    backdrop-filter: blur(100px);
+    box-shadow:0 0  30px black;
+}
+.sproject{
+    color:white;
+    backdrop-filter: blur(100px);
+    box-shadow:0 0 30px black;
+
+}
