@@ -74,6 +74,7 @@ html,body{
     padding: 15px;
     white-space: nowrap;
     overflow: hidden;
+    transform: sKewY(-3deg);
 }
 .name{
     padding-left: 4px;
