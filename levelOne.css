@@ -42,8 +42,8 @@ level{
     
 }
 .cover{
-    height:30%;
-    width:20%;
+    height:20%;
+    width:50%;
     /* border:1px solid black; */
     border-radius: 10px;
     display: flex;
