@@ -30,13 +30,13 @@ function match(){
     box[second].style.cssText = "color:blue";
     box[first].classList.add("drop");
     box[second].classList.add("drop");
-    setTimeout(gameOver,1000);
+    setTimeout(gameOver,200);
     first='a';
     second='b';
     audio2.play();
 }
 function check(){
-    setTimeout(match, 500)
+    setTimeout(match, 200)
 }
 function notmatch(){
         box[first].style.cssText = "color:transparent";
@@ -45,7 +45,7 @@ function notmatch(){
         second='b';
 }
 function check1(){
-    setTimeout(notmatch,500)
+    setTimeout(notmatch,200)
 }
 //gameover
 let count = 0;
