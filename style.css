@@ -318,7 +318,7 @@ html,body{
     box-shadow:0 0 30px black;
 
 }
-@media (max-width:600px){
+@media (max-width:768px){
     html,body{
         overflow-x: hidden;
     }
