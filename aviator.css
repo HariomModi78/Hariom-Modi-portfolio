@@ -1,0 +1,408 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-image: url(back.jpg);    
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:fixed;
+
+}
+#main{
+    height:100vh;
+    width:100vw;
+    position: fixed;
+    z-index: 10;
+}
+/* .payment{
+    height: 40px;
+    width:200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: 900;
+    background:linear-gradient(white,aqua);
+    z-index: 1;
+} */
+.cover{
+    height: 70%;
+    border:2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    justify-content: flex-end;
+}
+.previousresult{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    justify-content: space-between;
+}
+.result{
+    height: 50%;
+    width:50px;
+    border-radius: 20px;
+    /* background-color: black; */
+    box-shadow:inset 0 0 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color:black;
+}
+.option,.refresh{
+    height: 50%;
+    width:50px;
+    color:white;
+    font-size: 20px;
+    z-index: 1;
+}
+.bet{
+    height: 30%;
+    width: 100%;
+    border:2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bet1,.bet2{
+    height: 100%;
+    width:25%;
+    border:1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgb(82, 82, 82);
+}
+.betpart1{
+    height: 25%;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.betpart2{
+    height: 75%;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.amount,.confirm{
+    height:80%;
+    width:45%;
+    border:1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+.confirm{
+    background-color: rgb(47, 255, 0);
+    cursor: pointer;
+
+}
+.amountselector{
+    height: 25%;
+    width:100%;
+    border: 1px solid black;
+    border-radius: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgb(51, 47, 47);
+    color:white;
+}
+.amountselector i{   /*- icon*/
+    cursor: pointer;
+    display: flex;
+    height:60%;
+    width:10%;
+    border-radius: 50%;
+    border:2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    /* background-color: white; */
+}
+
+.bettype{
+    height:60%;
+    width:40%;
+    border:1px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(51, 47, 47);
+    color:white;
+    cursor: pointer;
+}
+p{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.amountenter{
+    height: 80%;
+    width:50px;
+    border-bottom:2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    background-color: transparent;
+    border: none;
+}
+.bettypeselect{
+    height: 100%;
+    width:50%;
+    background-color: gray;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.maincover{
+    height: 80%;
+    width:60%;
+    border: 1px solid black;
+    display: flex;
+    background:radial-gradient(blue,rgb(8, 8, 111),rgb(5, 5, 72),rgb(3, 3, 49));
+}
+.maincoverreal{
+    height: 100%;
+    width:94%;
+    border: 1px solid black;
+    /* background-image: url(background.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    /* align-items: center; */
+}
+.loader{
+    height: 170px;
+    width:120px;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    color:transparent;
+    border-color: transparent;
+
+}
+.x{
+    height:fit-content;
+    width:fit-content;
+    font-size: 80px;
+    color:white;
+}
+.loaderstart{
+    background-image: url(realroket.png);
+    background-repeat: no-repeat;
+    background-size: 220px 190px ;
+    background-position: center;
+    background-color: transparent;
+    /* object-fit: contain; */
+
+    /* border-radius:50%; */
+    /* height:120px; */
+    /* width:200px; */
+    /* border: 2px solid black; */
+    animation: fly 5s linear forwards;
+}
+@keyframes fly{
+    50%{
+        transform: translateY(-100%);
+    }
+    75%{
+        transform: translateY(-90%);
+    }
+    80%{
+        transform: translateY(-110%);
+        /* box-shadow: 0 0 20px black; */
+    }
+    85%{
+        transform: translateY(-105%);
+    }
+    90%{
+        transform: translateY(-110%);
+
+    }
+    95%{
+        transform: translateY(-105%);
+    }
+    100%{
+        transform: translateY(-110%);
+        /* mix-blend-mode: multiply; */
+    }
+}
+
+.maincoverreal img{ 
+    height: 130px;
+    width:180px;
+    rotate:-10deg;
+    transform:scaleX(-1)
+    /* rotate: 180deg; */
+    /* mix-blend-mode:multiply ; */
+}
+.sideline{
+    height: 100%;
+    width:6%;
+    border:1px solid black;
+    
+}
+.bottomline{
+    height: 10%;
+    border:1px solid black;
+    width:60%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+.bottomline input{
+    border-color:transparent;
+    border-bottom: 3px solid black;
+    height: 80%;
+    width: fit-content;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin:20px;
+
+}
+.winning,.totalBalance{
+    height: 80%;
+    margin:20px;
+    width:90px;
+    border:2px solid black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    background-color: white;
+    color:black;
+}
+.previousresult{
+    height: 10%;
+    border:1px solid black;
+    width:60%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.bettypeselectjs{
+    animation:turn 10ms linear forwards;
+}
+@keyframes turn{
+    100%{
+        transform: translateX(100%);
+    }
+}
+.confirm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+@media (max-width:700px){
+    .option div{
+        height: 100px;
+        width:100px;
+    }
+    h4{
+        height: 25%;
+        width: 100%;
+        margin: 4px;
+    }
+    .cover{
+        width:100%;
+        justify-content: space-between;
+        /* border:2px solid white; */
+    }
+    .previousresult{
+        height: 9%;
+        width:100%;
+        position: relative;
+    }
+    .result{
+        height: 30%;
+        width:30px;
+    }
+    .maincover{
+        height: 70%;
+        width:100%;
+        border: 1px solid black;
+        display: flex;
+        background:radial-gradient(blue,rgb(8, 8, 111),rgb(5, 5, 72),rgb(3, 3, 49));
+        /* position: relative; */
+    }
+    .bet{
+        height: 20%;
+        width: 100%;
+        border:2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bet1,.bet2{
+        height: 90%;
+        width:100%;
+    }
+    .betpart1{
+        height: 20%;
+    }
+    .betpart2{
+        height: 70%;
+    }
+    .bottomline{
+        height: 20%;
+        width:100%;
+        flex-direction: column;
+    }
+    .winning,.totalBalance{
+        height: 100%;
+        width:100px;
+        margin-left: 4px;
+    }
+    .bottomline input{
+        height: 100%;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 20px;
+        margin:20px;
+    }
+    .betpart2{
+        font-size: 10px;
+    }
+    .amountselector{
+        height: 30px;
+        font-size: 20px;
+    }
+    .result{
+        font-size: 10px;
+    }
+} 
