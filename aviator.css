@@ -66,6 +66,17 @@ html,body{
     font-size: 20px;
     z-index: 1;
 }
+.refreshjs{
+animation:update 300ms linear forwards;
+}
+@keyframes update{
+    50%{
+        font-size: 10px;
+    }
+    100%{
+        font-size: 20px;
+    }
+}
 .bet{
     height: 30%;
     width: 100%;
