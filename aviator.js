@@ -9,7 +9,7 @@ let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 
-if(localStorage.getItem("wallet") == null){
+if(localStorage.getItem("wallet")==null){//parseInt(totalBalance.innerText)!=51
     localStorage.setItem("wallet",51);
 }
 else{
@@ -164,7 +164,13 @@ for(let i=0;i<confirm.length;i++){
     
                             }
                             else{
-                                alert("insufficent balance");
+                                if(bettypeselect[i].classList.contains("bettypeselectjs")){
+                                    bettypeselect[i].classList.toggle("bettypeselectjs");
+                                }
+                                
+                                    alert("insufficent balance");
+
+                    
                                 setTimeout(()=>{
                                     loader[0].style.cssText = "background-color:transparent";
                                     flag = true;
@@ -176,7 +182,13 @@ for(let i=0;i<confirm.length;i++){
                 }
                 }
                 else{
-                    alert("Please Set Target")
+                    if(bettypeselect[i].classList.contains("bettypeselectjs")){
+                        bettypeselect[i].classList.toggle("bettypeselectjs");
+                    }
+                    else{
+                        alert("Please Set Target")
+
+                    }
                 }
 
             })
