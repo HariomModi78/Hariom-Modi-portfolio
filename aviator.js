@@ -33,7 +33,7 @@ function setresult(){
     result[countforresult].innerText = randomNumber;
 
     countforresult++;
-    if(countforresult==9){
+    if(countforresult==8){
         for(let i=0;i<result.length;i++){
             result[i].innerText = "";
             countforresult = 0;
