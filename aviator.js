@@ -19,6 +19,7 @@ else{
 let coins;
 let buy = 0;
 refresh.addEventListener("click",()=>{
+    refresh.classList.toggle("refreshjs");
     coins = localStorage.getItem("userCoins");
     if(buy==0){
         totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
@@ -27,6 +28,9 @@ refresh.addEventListener("click",()=>{
 
         localStorage.setItem("userCoins",0);
     }
+    setTimeout(()=>{
+    refresh.classList.toggle("refreshjs");
+    },1000)
 })
 
 for(let i=0;i<option.length;i++){
