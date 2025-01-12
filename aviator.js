@@ -9,12 +9,22 @@ let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 
+if(parseInt(totalBalance.innerText)!=51){
+    localStorage.setItem("wallet",51);
+}
+else{
+    totalBalance.innerText = localStorage.getItem("wallet") +".00 INR";
+}
+
 let coins;
 let buy = 0;
 refresh.addEventListener("click",()=>{
     coins = localStorage.getItem("userCoins");
     if(buy==0){
-        totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR"
+        totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
+        localStorage.setItem("wallet",parseInt(totalBalance.innerText));
+        
+
         localStorage.setItem("userCoins",0);
     }
 })
@@ -71,7 +81,6 @@ let flag = true;
 for(let i=0;i<confirm.length;i++){
         confirm[i].addEventListener("click",()=>{  //confirm par click karne ke bad
             
-        
             let interval = setInterval(()=>{  //for repetation in a fixed interval
                 let checkAuto = document.getElementsByClassName("bettypeselect");
                 if(!checkAuto[i].classList.contains("bettypeselectjs")){ 
@@ -102,7 +111,8 @@ for(let i=0;i<confirm.length;i++){
     
                                 setTimeout(()=>{
                                     loader[0].innerText = "0";
-                                    totalBalance.innerText = (parseInt(totalBalance.innerText)-parseInt(amountenter[i].innerText))+".00 INR"
+                                    totalBalance.innerText = (parseInt(totalBalance.innerText)-parseInt(amountenter[i].innerText))+".00 INR";
+                                    localStorage.setItem("wallet",parseInt(totalBalance.innerText));
                                 },4000)
                                 setTimeout(()=>{
                                     loader[0].style.cssText = "color:transparent";
@@ -143,7 +153,9 @@ for(let i=0;i<confirm.length;i++){
                                     loader[0].style.cssText = "background-color:transparent";
                                     flag = true;
                                     setresult();
-                                    totalBalance.innerText = (parseInt(totalBalance.innerText)+parseInt(winning.innerText))+".00 INR";
+                                    totalBalance.innerText = parseInt(parseInt(totalBalance.innerText)+parseInt(winning.innerText))+".00 INR";
+                                    localStorage.setItem("wallet",parseInt(totalBalance.innerText));
+
                                 },13000)
     
                             }
