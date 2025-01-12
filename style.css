@@ -5,12 +5,15 @@
 html,body{
     height:fit-content;
     width:100vw;
+    overflow-x:hidden;
 }
 .main{
     height:100vh;
     width:100vw;
     display: flex;
     justify-content: center;
+    position: relative;
+
 }
 #header{
     height:10vh;
@@ -28,6 +31,7 @@ html,body{
     color:white;
     cursor: pointer;
     text-decoration: none;
+    
 }
 #page1{
     height:100vh;
@@ -36,6 +40,7 @@ html,body{
     display: flex;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size:30px;
+
 }
 
 .headerBox:hover{
@@ -322,9 +327,11 @@ html,body{
     html,body{
         overflow-x: hidden;
     }
+    
     #header{
         height:8%;
         width:100vw;
+        position: fixed;
     }
     #main{
         height: 130vh;
@@ -333,18 +340,19 @@ html,body{
     #page1{
         height:130vh;
         flex-direction: column;
-
+        /* position: relative; */
     }
     #home{
-        margin-top:70px;
-        height:2%;
+        margin-top:30px;
+        height:10%;
         width:100%;
         justify-content: right;
     }
     #page1p1{
         justify-content: left;
-        height:90%;
+        height:fit-content;
         width:100vw;
+
     }
     .greeting{
         height:40px;
@@ -358,7 +366,7 @@ html,body{
     }
     #page1p2{
         justify-content: center;
-        height: 50%;
+        height: 100%;
         width:100vw;
     }
     #button{
@@ -369,8 +377,8 @@ html,body{
     }
     
     #logo{
-        height:30%;
-        width:100vw;
+        height:70%;
+        width:80vw;
         margin:0px;
         
     }
@@ -384,8 +392,10 @@ html,body{
         width:30%;
     }
     .page2{
+        margin-top: 63%;;
         flex-direction: column;
         width:100%;
+        position: relative;
     }
     .about{
         width:100%;
