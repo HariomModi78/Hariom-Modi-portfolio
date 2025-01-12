@@ -84,7 +84,7 @@ for(let i=0;i<confirm.length;i++){
                             flag = false;
                             confirm[i].style.cssText = "box-shadow:inset 0 0 20px black";
                         let target = document.querySelector("#target").value; //.value is used to fetch input value
-                        target = Number(target);
+                        target = parseInt(target);
                         console.log(target);
                         if(parseInt(totalBalance.innerText)>=parseInt(amountenter[i].innerText)){
     
