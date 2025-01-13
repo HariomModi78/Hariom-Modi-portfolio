@@ -9,6 +9,8 @@ let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 
+let myutr =7898488935; 
+
 if(localStorage.getItem("wallet")==null){//parseInt(totalBalance.innerText)!=51
     localStorage.setItem("wallet",51);
 }
@@ -20,13 +22,18 @@ let coins;
 let buy = 0;
 refresh.addEventListener("click",()=>{
     refresh.classList.toggle("refreshjs");
+    if(parseInt(localStorage.getItem("utr")) == myutr){
     coins = localStorage.getItem("userCoins");
+    totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
+    localStorage.setItem("wallet",parseInt(totalBalance.innerText));
+    localStorage.setItem("utr",null);
+    }
+    else if(localStorage.getItem("utr")==null){
+    localStorage.setItem("userCoins",0);
+        coins = 0;
+    }
     if(buy==0){
-        totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
-        localStorage.setItem("wallet",parseInt(totalBalance.innerText));
         
-
-        localStorage.setItem("userCoins",0);
     }
     setTimeout(()=>{
     refresh.classList.toggle("refreshjs");
