@@ -8,6 +8,9 @@ html,body{
  overflow-y: hidden;
 
 }
+img{
+    border-radius: 20px;
+}
 .cover1{
  height:100%;
  width:100%;   
