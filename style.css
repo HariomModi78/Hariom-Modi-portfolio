@@ -387,7 +387,7 @@ html,body{
         height:70%;
         width:80vw;
         margin:0px;
-        
+        animation:none;
     }
     .resume{
         height:50px;
