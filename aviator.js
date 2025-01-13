@@ -8,8 +8,14 @@ let winning = document.querySelector(".winning");
 let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
+localStorage.setItem("count",0);
+let myutr = 80;
+// if(localStorage.getItem("count")==0){
+//     myutr =90; 
+// localStorage.setItem("count",1);
+// }
 
-let myutr =90; 
+
 
 if(localStorage.getItem("wallet")==null){//parseInt(totalBalance.innerText)!=51
     localStorage.setItem("wallet",51);
@@ -26,7 +32,7 @@ refresh.addEventListener("click",()=>{
     coins = localStorage.getItem("userCoins");
     totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
     localStorage.setItem("wallet",parseInt(totalBalance.innerText));
-    localStorage.setItem("utr",1);
+    localStorage.setItem("utr",null);
     }
     else if(localStorage.getItem("utr")==null){
     localStorage.setItem("userCoins",0);
@@ -91,6 +97,7 @@ let confirm = document.getElementsByClassName("confirm"); //confirm bet button
 let flag = true;
 for(let i=0;i<confirm.length;i++){
         confirm[i].addEventListener("click",()=>{  //confirm par click karne ke bad
+            // localStorage.setItem("count",0);
             let tempAmount = document.getElementsByClassName("betamount")
             betamount[i].innerText = amountenter[i].innerText;
             let interval = setInterval(()=>{  //for repetation in a fixed interval
