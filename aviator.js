@@ -26,7 +26,7 @@ refresh.addEventListener("click",()=>{
     coins = localStorage.getItem("userCoins");
     totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
     localStorage.setItem("wallet",parseInt(totalBalance.innerText));
-    localStorage.setItem("utr",null);
+    localStorage.setItem("utr",1);
     }
     else if(localStorage.getItem("utr")==null){
     localStorage.setItem("userCoins",0);
