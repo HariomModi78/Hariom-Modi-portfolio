@@ -9,7 +9,7 @@ let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 localStorage.setItem("count",0);
-let myutr = 80;
+let myutr = 90;
 // if(localStorage.getItem("count")==0){
 //     myutr =90; 
 // localStorage.setItem("count",1);
@@ -35,6 +35,7 @@ refresh.addEventListener("click",()=>{
     localStorage.setItem("utr",null);
     }
     else if(localStorage.getItem("utr")==null){
+    myutr=722;
     localStorage.setItem("userCoins",0);
         coins = 0;
     }
