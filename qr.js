@@ -6,29 +6,47 @@ let sixHundred = document.querySelector("#sixHundred");
 let sevenHundred = document.querySelector("#sevenHundred");
 
 
+let myutr = 5;
 
-let qr = document.querySelector("#hundredRsQr");
+let image = document.getElementsByTagName("img");
+console.log(image);
+
+let utr = document.getElementsByClassName("utr");
+
+for(let i=0;i<utr.length;i++){
+    utr[i].addEventListener("click",()=>{
+        if(utr[i].innerText == "Enter UTR number"){
+            utr[i].innerText = "";
+        }
+        
+    })
+    
+}
+
+let time = document.getElementsByClassName("time"); //payment done button
+
+// let qr = document.querySelector("#hundredRsQr");
 let payment = document.querySelector(".payment");
-let time = document.getElementsByClassName("time");
 let temp = 1;
 for(let i=0;i<time.length;i++){
+
+    time[i].addEventListener("click",()=>{
+        localStorage.setItem("utr",parseInt(utr[i].innerText));
+    })
 
     hundred.addEventListener("click",()=>{
 
         hundred.style.cssText = "box-shadow:inset 0 0 5px black"
         payment.addEventListener("click",()=>{
             window.location.href = "#hundredRsQr";
-            let interval = setInterval(()=>{
-                if(temp==0){
-                    time[i].innerText = "Payment Done";
-                    time[i].style.cssText = "background-color:green;width:150px";
-                    clearInterval(interval);
+            time[i].innerText = "Payment Done";
+            time[i].style.cssText = "width:150px;"
+            time[i].addEventListener("click",()=>{
+            time[i].innerText = "payment is add within 24hr thanks";
+            time[i].style.cssText = "background-color:green;width:290px;box-shadow:inset 0 0 10px black";
+            })
                     localStorage.setItem("userCoins", 100);
-                }
-                temp = 0;
-                
-            },5000)
-    
+
         })
     });
     
@@ -36,18 +54,13 @@ for(let i=0;i<time.length;i++){
         twoHundred.style.cssText = "box-shadow:inset 0 0 5px black"
         payment.addEventListener("click",()=>{
             window.location.href = "#twoHundredRsQr";
-            
-            let interval = setInterval(()=>{
-                if(temp==0){
                     time[i].innerText = "Payment Done";
-                    time[i].style.cssText = "background-color:green;width:150px";
-                    clearInterval(interval);
+                    time[i].style.cssText = "width:150px;"
+                    time[i].addEventListener("click",()=>{
+                    time[i].innerText = "payment is add within 24hr thanks";
+                    time[i].style.cssText = "background-color:green;width:290px;box-shadow:inset 0 0 10px black";
+                    })
                     localStorage.setItem("userCoins", 200);
-                }
-                temp = 0;
-                
-            },5000)
-    
         })
     });
     
@@ -56,16 +69,13 @@ for(let i=0;i<time.length;i++){
         payment.addEventListener("click",()=>{
             window.location.href = "#threeHundredRsQr";
     
-            let interval = setInterval(()=>{
-                if(temp==0){
-                    time[i].innerText = "Payment Done";
-                    time[i].style.cssText = "background-color:green;width:150px";
-                    clearInterval(interval);
+            time[i].innerText = "Payment Done";
+            time[i].style.cssText = "width:150px;"
+            time[i].addEventListener("click",()=>{
+            time[i].innerText = "payment is add within 24hr thanks";
+            time[i].style.cssText = "background-color:green;width:290px;box-shadow:inset 0 0 10px black";
+            })
                     localStorage.setItem("userCoins", 300);
-                }
-                temp = 0;
-                
-            },5000)
     
         })
     });
@@ -74,16 +84,13 @@ for(let i=0;i<time.length;i++){
         payment.addEventListener("click",()=>{
             window.location.href = "#fiveHundredRsQr";
     
-            let interval = setInterval(()=>{
-                if(temp==0){
-                    time[i].innerText = "Payment Done";
-                    time[i].style.cssText = "background-color:green;width:150px";
-                    clearInterval(interval);
+            time[i].innerText = "Payment Done";
+            time[i].style.cssText = "width:150px;"
+            time[i].addEventListener("click",()=>{
+            time[i].innerText = "payment is add within 24hr thanks";
+            time[i].style.cssText = "background-color:green;width:290px;box-shadow:inset 0 0 10px black";
+            })
                     localStorage.setItem("userCoins", 500);
-                }
-                temp = 0;
-                
-            },5000)
     
         })
     });
@@ -93,16 +100,13 @@ for(let i=0;i<time.length;i++){
         payment.addEventListener("click",()=>{
             window.location.href = "#sixHundredRsQr";
     
-            let interval = setInterval(()=>{
-                if(temp==0){
-                    time[i].innerText = "Payment Done";
-                    time[i].style.cssText = "background-color:green;width:150px";
-                    clearInterval(interval);
+            time[i].innerText = "Payment Done";
+            time[i].style.cssText = "width:150px;"
+            time[i].addEventListener("click",()=>{
+            time[i].innerText = "payment is add within 24hr thanks";
+            time[i].style.cssText = "background-color:green;width:290px;box-shadow:inset 0 0 10px black";
+            })
                     localStorage.setItem("userCoins", 600);
-                }
-                temp = 0;
-                
-            },5000)
     
         })
     });
@@ -111,16 +115,13 @@ for(let i=0;i<time.length;i++){
         payment.addEventListener("click",()=>{
             window.location.href = "#sevenHundredRsQr";
     
-            let interval = setInterval(()=>{
-                if(temp==0){
-                    time[i].innerText = "Payment Done";
-                    time[i].style.cssText = "background-color:green;width:150px";
-                    clearInterval(interval);
-                    localStorage.setItem("userCoins", 700);
-                }
-                temp = 0;
-                
-            },5000)
+            time[i].innerText = "Payment Done";
+            time[i].style.cssText = "width:150px;"
+            time[i].addEventListener("click",()=>{
+            time[i].innerText = "payment is add within 24hr thanks";
+            time[i].style.cssText = "background-color:green;width:290px;box-shadow:inset 0 0 10px black";
+            })
+                localStorage.setItem("userCoins", 700);
     
         })
     });
