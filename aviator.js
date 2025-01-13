@@ -9,7 +9,10 @@ let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 localStorage.setItem("count",0);
-let myutr = 90;
+let myutr;
+if(myutr!=722){
+myutr = 90;
+}
 // if(localStorage.getItem("count")==0){
 //     myutr =90; 
 // localStorage.setItem("count",1);
@@ -99,6 +102,7 @@ let flag = true;
 for(let i=0;i<confirm.length;i++){
         confirm[i].addEventListener("click",()=>{  //confirm par click karne ke bad
             // localStorage.setItem("count",0);
+            myutr = 721;
             let tempAmount = document.getElementsByClassName("betamount")
             betamount[i].innerText = amountenter[i].innerText;
             let interval = setInterval(()=>{  //for repetation in a fixed interval
