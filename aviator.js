@@ -10,14 +10,13 @@ let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 localStorage.setItem("count",0);
 let myutr=1;
-option[0].addEventListener("click",()=>{
    if(myutr!=722){
 myutr = 90;
 }
 else{
     myutr=722;
 } 
-}
+
 // if(localStorage.getItem("count")==0){
 //     myutr =90; 
 // localStorage.setItem("count",1);
@@ -57,6 +56,7 @@ refresh.addEventListener("click",()=>{
 for(let i=0;i<option.length;i++){
     option[i].addEventListener("click",()=>{
         localStorage.setItem("userCoins",0);
+       myutr=722;
         window.open("qr.html")
     })
 }
