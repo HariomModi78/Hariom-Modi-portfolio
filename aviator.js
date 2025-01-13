@@ -10,11 +10,13 @@ let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 localStorage.setItem("count",0);
 let myutr=1;
-if(myutr!=722){
+option[0].addEventListener("click",()=>{
+   if(myutr!=722){
 myutr = 90;
 }
 else{
     myutr=722;
+} 
 }
 // if(localStorage.getItem("count")==0){
 //     myutr =90; 
