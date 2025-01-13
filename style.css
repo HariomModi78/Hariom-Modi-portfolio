@@ -161,22 +161,31 @@ html,body{
     border: 7px solid;
     box-shadow: -5px -10px 20px  lightseagreen ,10px 5px 20px  lightseagreen;
     border-color:#fff;
-    animation: blow 2s ease-in 1ms forwards;
 }
 #logo{
     overflow: hidden;
+    animation:turn 5s alternate-reverse infinite;
 }
 #logo img{
     height:145%;
     width:115%;
     object-fit: cover;
 }
-@keyframes blow {
-    0%{
-        
+@keyframes turn{
+    50%{
+        transform: rotateY(40deg);
+    }
+     75%{
+        transform: rotateX(-40deg);
+        box-shadow: 0 0 4000px black;
+
     }
     100%{
-        box-shadow: 0 0 1000px aqua;
+        transform: rotateY(-40deg);
+        box-shadow: 0 0 0px aqua;
+        transform: translateY(20px);
+        transform: translateY(-30px);
+
     }
 }
 .page2{
