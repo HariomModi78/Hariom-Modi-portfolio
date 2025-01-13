@@ -9,7 +9,7 @@ let totalBalance  = document.querySelector(".totalBalance");
 let option = document.getElementsByClassName("option");
 let refresh = document.querySelector(".refresh");
 
-let myutr =7898488935; 
+let myutr =7898; 
 
 if(localStorage.getItem("wallet")==null){//parseInt(totalBalance.innerText)!=51
     localStorage.setItem("wallet",51);
