@@ -20,6 +20,7 @@ html,body{
     width:30vw;
     display: flex;
     position:fixed;
+    z-index: 100;
 }
 
 .headerBox{
