@@ -64,7 +64,7 @@ img{
     align-items: center;
     cursor: pointer;
 }
-#hundredRsQr,#twoHundredRsQr,#threeHundredRsQr,#fourHundredRsQr,#fiveHundredRsQr,#sixHundredRsQr,#sevenHundredRsQr{
+#hundredRsQr,#twoHundredRsQr,#threeHundredRsQr{
     height: 100vh;
     width:100vw;
     display: flex;
@@ -116,6 +116,4 @@ img{
     .amount{
         width:100%;
     }
-    .utr{
-        width:100%;
 }
