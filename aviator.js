@@ -26,11 +26,12 @@ else{
 }
 
 let coins;
+let k=0;
 // let buy = 0;
 // localStorage.setItem("num",1);
 refresh.addEventListener("click",()=>{
     // if(localStorage.getItem("num")==1){
-        localStorage.setItem("myutr",7898)
+        localStorage.setItem("myutr",7898+k)
     // }
     // else{
         // myutr = 90;
@@ -39,6 +40,7 @@ refresh.addEventListener("click",()=>{
     refresh.classList.toggle("refreshjs");
     if(parseInt(localStorage.getItem("utr")) == parseInt(localStorage.getItem("myutr"))){
         // localStorage.setItem("num",10);
+        k = 12;
     coins = localStorage.getItem("userCoins");
     totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
     localStorage.setItem("wallet",parseInt(totalBalance.innerText));
