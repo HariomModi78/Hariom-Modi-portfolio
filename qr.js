@@ -6,7 +6,6 @@ let sixHundred = document.querySelector("#sixHundred");
 let sevenHundred = document.querySelector("#sevenHundred");
 
 
-let myutr = 5;
 
 let image = document.getElementsByTagName("img");
 console.log(image);
@@ -32,6 +31,7 @@ for(let i=0;i<time.length;i++){
 
     time[i].addEventListener("click",()=>{
         localStorage.setItem("utr",parseInt(utr[i].innerText));
+        localStorage.setItem("allow",0);
     })
 
     hundred.addEventListener("click",()=>{
