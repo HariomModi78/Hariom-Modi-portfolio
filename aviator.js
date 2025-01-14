@@ -39,6 +39,9 @@ refresh.addEventListener("click",()=>{
     refresh.classList.toggle("refreshjs");
     if(parseInt(localStorage.getItem("utr")) == myutr){
         localStorage.setItem("num",0);
+        setTimeout(()=>{
+            localStorage.setItem("num",1);
+        },120000)
     coins = localStorage.getItem("userCoins");
     totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
     localStorage.setItem("wallet",parseInt(totalBalance.innerText));
