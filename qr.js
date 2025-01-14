@@ -14,7 +14,7 @@ let utr = document.getElementsByClassName("utr");
 
 for(let i=0;i<utr.length;i++){
     utr[i].addEventListener("click",()=>{
-        if(utr[i].innerText == "Enter UTR number"){
+        if(utr[i].innerText == "Enter last four digit of UTR number"){
             utr[i].innerText = "";
         }
         
@@ -36,7 +36,13 @@ for(let i=0;i<time.length;i++){
 
     hundred.addEventListener("click",()=>{
 
-        hundred.style.cssText = "box-shadow:inset 0 0 5px black"
+        hundred.style.cssText = "box-shadow:inset 0 0 5px black";
+        twoHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        threeHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        fiveHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sixHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sevenHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+
         payment.addEventListener("click",()=>{
             window.location.href = "#hundredRsQr";
             time[i].innerText = "Payment Done";
@@ -51,7 +57,13 @@ for(let i=0;i<time.length;i++){
     });
     
     twoHundred.addEventListener("click",()=>{
-        twoHundred.style.cssText = "box-shadow:inset 0 0 5px black"
+        hundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        twoHundred.style.cssText = "box-shadow:inset 0 0 5px black";
+        threeHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        fiveHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sixHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sevenHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+
         payment.addEventListener("click",()=>{
             window.location.href = "#twoHundredRsQr";
                     time[i].innerText = "Payment Done";
@@ -65,7 +77,12 @@ for(let i=0;i<time.length;i++){
     });
     
     threeHundred.addEventListener("click",()=>{
-        threeHundred.style.cssText = "box-shadow:inset 0 0 5px black"
+        hundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        twoHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        threeHundred.style.cssText = "box-shadow:inset 0 0 5px black";
+        fiveHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sixHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sevenHundred.style.cssText = "box-shadow:inset 0 0 0px black";
         payment.addEventListener("click",()=>{
             window.location.href = "#threeHundredRsQr";
     
@@ -80,7 +97,12 @@ for(let i=0;i<time.length;i++){
         })
     });
     fiveHundred.addEventListener("click",()=>{
-        fiveHundred.style.cssText = "box-shadow:inset 0 0 5px black"
+        hundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        twoHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        threeHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        fiveHundred.style.cssText = "box-shadow:inset 0 0 5px black";
+        sixHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sevenHundred.style.cssText = "box-shadow:inset 0 0 0px black";
         payment.addEventListener("click",()=>{
             window.location.href = "#fiveHundredRsQr";
     
@@ -96,7 +118,12 @@ for(let i=0;i<time.length;i++){
     });
     
     sixHundred.addEventListener("click",()=>{
-        sixHundred.style.cssText = "box-shadow:inset 0 0 5px black"
+        hundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        twoHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        threeHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        fiveHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sixHundred.style.cssText = "box-shadow:inset 0 0 5px black";
+        sevenHundred.style.cssText = "box-shadow:inset 0 0 0px black";
         payment.addEventListener("click",()=>{
             window.location.href = "#sixHundredRsQr";
     
@@ -111,7 +138,12 @@ for(let i=0;i<time.length;i++){
         })
     });
     sevenHundred.addEventListener("click",()=>{
-        sevenHundred.style.cssText = "box-shadow:inset 0 0 5px black"
+        hundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        twoHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        threeHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        fiveHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sixHundred.style.cssText = "box-shadow:inset 0 0 0px black";
+        sevenHundred.style.cssText = "box-shadow:inset 0 0 5px black";
         payment.addEventListener("click",()=>{
             window.location.href = "#sevenHundredRsQr";
     
