@@ -17,10 +17,12 @@ if(localStorage.getItem("allow")==0){
 }
 
 withdraw.addEventListener("click",()=>{
-    if(parseInt(input.innerText)%1000 == 0 && parseInt(input.innerText)>=1000 && (localStorage.getItem("wallet")-parseInt(input.innerText)>=0)){
+    if(parseInt(input.innerText)==1000 && (localStorage.getItem("wallet")-parseInt(input.innerText)>=0)){
         let update = localStorage.getItem("wallet") - parseInt(input.innerText);
         localStorage.setItem("wallet",update);
         wallet.innerText = localStorage.getItem("wallet") +".00 INR";
+        
+        // totalBalance.innerText = wallet.innerText;
         withdraw.style.cssText = "box-shadow: inset 0 0 10px black";
         withdraw.style.cssText = "background-color:green";
         setTimeout(()=>{
