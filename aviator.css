@@ -59,7 +59,7 @@ html,body{
     background-color: white;
     color:black;
 }
-.option,.refresh{
+.option,.refresh,.wallet{
     height: 50%;
     width:50px;
     color:white;
@@ -339,6 +339,7 @@ h4{
     height: 80%;
 }
 
+
 @media (max-width:700px){
     .option div{
         height: 100px;
@@ -396,7 +397,7 @@ h4{
     }
     .winning,.totalBalance{
         height: 100%;
-        width:100px;
+        width:130px;
         margin-left: 4px;
     }
     .bottomline input{
