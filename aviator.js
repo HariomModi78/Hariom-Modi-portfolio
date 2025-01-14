@@ -30,7 +30,7 @@ let buy = 0;
 localStorage.setItem("num",1);
 refresh.addEventListener("click",()=>{
     if(localStorage.getItem("num")==1){
-        myutr = 789;
+        myutr = 3690;
     }
     else{
         myutr = 90;
