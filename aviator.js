@@ -31,7 +31,7 @@ let k=0;
 // localStorage.setItem("num",1);
 refresh.addEventListener("click",()=>{
     // if(localStorage.getItem("num")==1){
-        localStorage.setItem("myutr",1234+k)
+        localStorage.setItem("myutr",6779+k)
     // }
     // else{
         // myutr = 90;
