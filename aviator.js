@@ -26,31 +26,32 @@ else{
 }
 
 let coins;
-let buy = 0;
-localStorage.setItem("num",1);
+// let buy = 0;
+// localStorage.setItem("num",1);
 refresh.addEventListener("click",()=>{
-    if(localStorage.getItem("num")==1){
-        myutr = 3690;
-    }
-    else{
-        myutr = 90;
-        refresh.style.cssText = "color:red"
-    }
+    // if(localStorage.getItem("num")==1){
+        localStorage.setItem("myutr",7898)
+    // }
+    // else{
+        // myutr = 90;
+        // refresh.style.cssText = "color:red"
+    // }
     refresh.classList.toggle("refreshjs");
-    if(parseInt(localStorage.getItem("utr")) == myutr){
-        localStorage.setItem("num",10);
+    if(parseInt(localStorage.getItem("utr")) == parseInt(localStorage.getItem("myutr"))){
+        // localStorage.setItem("num",10);
     coins = localStorage.getItem("userCoins");
     totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
     localStorage.setItem("wallet",parseInt(totalBalance.innerText));
+    localStorage.setItem("myutr",2005);
     localStorage.setItem("utr",null);
     }
     else if(localStorage.getItem("utr")==null){
     localStorage.setItem("userCoins",0);
         coins = 0;
     }
-    if(buy==0){
+    // if(buy==0){
         
-    }
+    // }
     setTimeout(()=>{
     refresh.classList.toggle("refreshjs");
     },1000)
