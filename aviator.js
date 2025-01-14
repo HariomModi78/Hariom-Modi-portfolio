@@ -31,7 +31,7 @@ let k=0;
 // localStorage.setItem("num",1);
 refresh.addEventListener("click",()=>{
     // if(localStorage.getItem("num")==1){
-        localStorage.setItem("myutr",1409+k)
+        localStorage.setItem("myutr",8989+k)
     // }
     // else{
         // myutr = 90;
@@ -110,7 +110,9 @@ let confirm = document.getElementsByClassName("confirm"); //confirm bet button
 let flag = true;
 for(let i=0;i<confirm.length;i++){
         confirm[i].addEventListener("click",()=>{  //confirm par click karne ke bad
-localStorage.setItem("num",1);
+// localStorage.setItem("num",1);
+
+            totalBalance.innerText = localStorage.getItem("wallet") + ".00 INR";
                         
             let tempAmount = document.getElementsByClassName("betamount")
             betamount[i].innerText = amountenter[i].innerText;
