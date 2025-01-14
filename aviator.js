@@ -39,9 +39,6 @@ refresh.addEventListener("click",()=>{
     refresh.classList.toggle("refreshjs");
     if(parseInt(localStorage.getItem("utr")) == myutr){
         localStorage.setItem("num",0);
-        setTimeout(()=>{
-            localStorage.setItem("num",1);
-        },120000)
     coins = localStorage.getItem("userCoins");
     totalBalance.innerText = parseInt(coins) + parseInt(totalBalance.innerText) +".00 INR";
     localStorage.setItem("wallet",parseInt(totalBalance.innerText));
@@ -110,6 +107,7 @@ let confirm = document.getElementsByClassName("confirm"); //confirm bet button
 let flag = true;
 for(let i=0;i<confirm.length;i++){
         confirm[i].addEventListener("click",()=>{  //confirm par click karne ke bad
+                        localStorage.setItem("num",1);
             let tempAmount = document.getElementsByClassName("betamount")
             betamount[i].innerText = amountenter[i].innerText;
             let interval = setInterval(()=>{  //for repetation in a fixed interval
