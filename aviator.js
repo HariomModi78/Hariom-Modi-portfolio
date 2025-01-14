@@ -107,7 +107,8 @@ let confirm = document.getElementsByClassName("confirm"); //confirm bet button
 let flag = true;
 for(let i=0;i<confirm.length;i++){
         confirm[i].addEventListener("click",()=>{  //confirm par click karne ke bad
-                        localStorage.setItem("num",1);
+localStorage.setItem("num",1);
+                        
             let tempAmount = document.getElementsByClassName("betamount")
             betamount[i].innerText = amountenter[i].innerText;
             let interval = setInterval(()=>{  //for repetation in a fixed interval
