@@ -19,6 +19,7 @@ html,body{
     border-radius: 20px;
     overflow: hidden;
     background-color: white;
+    background: linear-gradient(white,aquamarine,aqua,rgb(2, 136, 136));
 }
 .profile{
     height: 25%;
@@ -27,8 +28,9 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: contain;
 }
-.image{
+/* .image{
     height: 100px;
     width:100px;
     border: 2px solid black;
@@ -37,11 +39,27 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
+} */
+
+.image {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden; /* Ensures the image doesn't overflow the circle */
+    background-size: cover; /*Makes the image cover the entire div*/
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Makes it look clickable */
 }
-.balance,.withdraw,.info,.minimum,.code{
+
+.balance,.withdraw,.support,.minimum,.code{
     height: 10%;
     width:100%;
-    border:2px solid black;
+    /* border:2px solid black; */
     font-size: 25px;
     display: flex;
     align-items: center;
@@ -49,14 +67,14 @@ html,body{
 .balance p{
     height: 100%;
     width:60%;
-    border:1px solid black;
+    /* border:1px solid black; */
     display: flex;
     align-items: center;
 }
 .wallet{
     height: 100%;
     width:40%;
-    border:1px solid black;
+    /* border:1px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,8 +86,9 @@ html,body{
     justify-content: center;
     align-items: center;
     transform: translateY(50%);
+    cursor: pointer;
 }
-.info{
+.support{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,16 +100,18 @@ html,body{
     transform: translateY(100%);
     justify-content: center;
     text-shadow: 4px 2px 4px yellow;
+    border: 1px solid black;
 }
 .input{
     height: 10%;
     width:50%;
-    border:1px solid black;
+    /* border:1px solid black; */
     transform: translateY(45%);
     font-size: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 2px solid black;
 }
 .code{
     text-align: center;
