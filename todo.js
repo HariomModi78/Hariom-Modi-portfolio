@@ -40,12 +40,13 @@ localStorage.setItem("count",1)
     for(let i=0;i<check.length;i++){
         check[i].addEventListener("click",()=>{
         arr[i].style.cssText = "    text-decoration:line-through";
-           let temp = parseInt(localStorage.getItem("taskComplete"));
+           
+
+            setTimeout(()=>{
+                let temp = parseInt(localStorage.getItem("taskComplete"));
            temp++;
            localStorage.setItem("taskComplete",parseInt(temp));
     reset.innerText = localStorage.getItem("taskComplete");
-
-            setTimeout(()=>{
                 let text = arr[i].innerText;
             console.log(text)
             cover.removeChild(arr[i]);
@@ -78,15 +79,16 @@ if(localStorage.getItem("count")!=null){
 for(let i=0;i<check.length;i++){
     check[i].addEventListener("click",()=>{
         arr[i].style.cssText = "    text-decoration:line-through";
-        let temp = parseInt(localStorage.getItem("taskComplete"));
+        
+
+        setTimeout(()=>{
+            let temp = parseInt(localStorage.getItem("taskComplete"));
         console.log(temp);
 
         temp++;
         console.log(temp);
         localStorage.setItem("taskComplete",parseInt(temp));
     reset.innerText = localStorage.getItem("taskComplete");
-
-        setTimeout(()=>{
             let text = arr[i].innerText;
         console.log(text)
         cover.removeChild(arr[i]);
