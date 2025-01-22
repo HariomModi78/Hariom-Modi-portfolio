@@ -1,11 +1,19 @@
 let cover = document.querySelector(".cover");
 let button = document.querySelector("button");
 let input = document.querySelector("input");
-
+let reset = document.querySelector(".reset");
 let box = [];
 let arr = [];
 let check = [];
 
+if(localStorage.getItem("count")==null){
+    localStorage.setItem("taskComplete",0);
+    console.log("taskComplete");
+    reset.innerText = localStorage.getItem("taskComplete");
+}
+else{
+    reset.innerText = localStorage.getItem("taskComplete");
+}
 
 button.addEventListener("click",()=>{
     if(input.value.trim() !== ""){
@@ -32,15 +40,19 @@ localStorage.setItem("count",1)
     for(let i=0;i<check.length;i++){
         check[i].addEventListener("click",()=>{
         arr[i].style.cssText = "    text-decoration:line-through";
-           
+           let temp = parseInt(localStorage.getItem("taskComplete"));
+           temp++;
+           localStorage.setItem("taskComplete",parseInt(temp));
+    reset.innerText = localStorage.getItem("taskComplete");
+
             setTimeout(()=>{
                 let text = arr[i].innerText;
             console.log(text)
             cover.removeChild(arr[i]);
-            box[i].removeChild;
+            // box[i].removeChild;
             box = box.filter(item => item !== text);
             localStorage.setItem("array",JSON.stringify(box));
-            },2000)
+            },1000)
         })
     }
 
@@ -66,15 +78,22 @@ if(localStorage.getItem("count")!=null){
 for(let i=0;i<check.length;i++){
     check[i].addEventListener("click",()=>{
         arr[i].style.cssText = "    text-decoration:line-through";
+        let temp = parseInt(localStorage.getItem("taskComplete"));
+        console.log(temp);
+
+        temp++;
+        console.log(temp);
+        localStorage.setItem("taskComplete",parseInt(temp));
+    reset.innerText = localStorage.getItem("taskComplete");
 
         setTimeout(()=>{
             let text = arr[i].innerText;
         console.log(text)
         cover.removeChild(arr[i]);
-        box[i].removeChild;
+        // box[i].removeChild;
         box = box.filter(item => item !== text);
         localStorage.setItem("array",JSON.stringify(box));
-        },2000)
+        },1000)
     })
 }
 
