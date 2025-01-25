@@ -147,22 +147,33 @@ if(JSON.parse(localStorage.getItem("todayArray"))!=null){
 
 for(let i=0;i<todayTaskBox.length;i++){
     todayTaskBox[i].classList.add("wait");
-    todayTaskBox[i].addEventListener("click",()=>{
-        todayTaskBox[i].classList.remove("wait");
-        todayTaskBox[i].classList.add("tick");
-        todayTick = JSON.parse(localStorage.getItem("todayTick")) || [];
-        todayTick.push(i);
-        localStorage.setItem("todayTick",JSON.stringify(todayTick));
-    })
+        todayTaskBox[i].addEventListener("click",()=>{
+    if(!todayTaskBox[i].classList.contains("tick")){
+            todayTaskBox[i].classList.remove("wait");
+            todayTaskBox[i].classList.add("tick");
+            todayTick = JSON.parse(localStorage.getItem("todayTick")) || [];
+            todayTick.push(i);
+            localStorage.setItem("todayTick",JSON.stringify(todayTick));
+            console.log(JSON.parse(localStorage.getItem("todayTick")));
+    }
+
+        })
+    
 }
 for(let i=0;i<commonTaskBox.length;i++){
     commonTaskBox[i].classList.add("wait");
     commonTaskBox[i].addEventListener("click",()=>{
-        commonTaskBox[i].classList.remove("wait");
+        if(!commonTaskBox[i].classList.contains("tick")){
+            commonTaskBox[i].classList.remove("wait");
         commonTaskBox[i].classList.add("tick")
         commonTick = JSON.parse(localStorage.getItem("commonTick")) || [];
         commonTick.push(i);
         localStorage.setItem("commonTick",JSON.stringify(commonTick));
+        console.log(JSON.parse(localStorage.getItem("commonTick")));
+
+    }
+
+        
     })
 }
 
@@ -195,12 +206,15 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
     let monthlyPercentage = document.querySelector(".monthlyPercentage");
     let yearlyPercentage = document.querySelector(".yearlyPercentage");
 
+    if(JSON.parse(localStorage.getItem("todayTick")) !=null &&  JSON.parse(localStorage.getItem("commonTick")) !=null){
+        let taskDone = JSON.parse(localStorage.getItem("todayTick")).length + JSON.parse(localStorage.getItem("commonTick")).length;
 
-    let taskDone = JSON.parse(localStorage.getItem("todayTick")).length + JSON.parse(localStorage.getItem("commonTick")).length;
+        let totalTask = JSON.parse(localStorage.getItem("todayArray")).length + JSON.parse(localStorage.getItem("commonArray")).length;
+    
+        dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
+        weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
+        monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
+        yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
+    }
 
-    let totalTask = JSON.parse(localStorage.getItem("todayArray")).length + JSON.parse(localStorage.getItem("commonArray")).length
-
-    dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
-    weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
-    monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
-    yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
+   
