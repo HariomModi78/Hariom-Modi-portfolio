@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100vh;
+    width: 100vw;
+    /* border: 10px solid black; */
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.input{
+    position: fixed;
+    height: 50%;
+    width: 100%;
+    /* background-color: gray; */
+    backdrop-filter: blur(60px);
+    /* margin-top: 30vh; */
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+.inputjs{
+    animation: slide 100ms linear forwards;
+}
+@keyframes slide{
+    100%{
+        margin-top: 30vh;
+    }
+}
+#input{
+    margin-top: 20%;
+    height: 10%;
+    width: 90%;
+    border-radius: 5px;
+    padding-left: 10px;
+    border-color: transparent;
+    border-bottom: 3px solid black;
+    display: flex;
+    text-align: center;
+    outline: none;
+    font-size: larger;
+}
+button{
+    height: 13%;
+    width: 20%;
+    background-color: blue;
+    border-radius: 10px;
+    color:white;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 20%;
+    
+}
+.newDiv{
+    height: 5%;
+    width: 90%;
+    border: 1px solid white;
+    margin-top: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.checkBox{
+    height: 80%;
+    width: 10%;
+    background-color: white;
+    border-radius: 20%;
+}
+.tick{
+    background: url(check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* background-color: green; */
+}
+.wait{
+    background: url(hourglass.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    mix-blend-mode:lighten;
+}
+.design{
+    height: 51%;
+    width: 6%;
+    left: -50%;
+    border-radius: 50%;
+    background-color: blue;
+    position: relative;
+}
+h1{
+    padding-top: 10px;
+    color:white;
+    text-align: center;
+}
+#today,#track,#common,#more,#daily,#weekly,#monthly,#yearly{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    /* background-color: blue; */
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.row{
+    height: 10%;
+    margin: 10px;
+    border: 2px solid white;
+}
+.bottom{
+    height: 12%;
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    bottom: 15px;
+    background-color: rgba(57, 54, 54, 0.424);
+    z-index: 1000;
+}
+.addButton{
+    height: 9%;
+    width: 18%;
+    border-radius: 25%;
+    background-color: white;
+    border: 1px solid black;
+    position: fixed;
+    right: 15px;
+    bottom:125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,aqua,blue)
+}
+.addButton p{
+    color:white;
+    font-size: 30px;
+}
+.bottomBox{
+    border: 1px solid black;
+    height: 100%;
+    width: calc(100%/4);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bottomBox i{
+    color: white;
+    font-size: 30px;
+    margin-top: 17px;
+}
+.bottomBox p{
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+.common{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+.track{
+    height: 100%;
+    width: 100%;
+    background-color: green;
+}
+
+.daily,.weekly,.monthly,.yearly{
+    height: 7%;
+    width: 70%;
+    border-radius: 10px;
+    margin: 20px;
+    border: 1px solid white;
+    box-shadow:2px 5px 3000px rgb(3, 74, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+.daily{
+    margin-top:80px;
+}
+
+.more{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
