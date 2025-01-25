@@ -189,3 +189,18 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
 }
 
     console.log("Tick =" + JSON.parse(localStorage.getItem("todayTick")))
+
+    let dailyPercentage = document.querySelector(".dailyPercentage");
+    let weeklyPercentage = document.querySelector(".weeklyPercentage");
+    let monthlyPercentage = document.querySelector(".monthlyPercentage");
+    let yearlyPercentage = document.querySelector(".yearlyPercentage");
+
+
+    let taskDone = JSON.parse(localStorage.getItem("todayTick")).length + JSON.parse(localStorage.getItem("commonTick")).length;
+
+    let totalTask = JSON.parse(localStorage.getItem("todayArray")).length + JSON.parse(localStorage.getItem("commonArray")).length
+
+    dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
+    weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
+    monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
+    yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
