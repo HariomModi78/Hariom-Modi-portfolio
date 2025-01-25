@@ -206,6 +206,34 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
     let monthlyPercentage = document.querySelector(".monthlyPercentage");
     let yearlyPercentage = document.querySelector(".yearlyPercentage");
 
+    // if(JSON.parse(localStorage.getItem("todayTick")) ==null){
+    //     JSON.parse(localStorage.getItem("todayTick")) = [];
+    // }
+    // if(JSON.parse(localStorage.getItem("commonTick")) ==null){
+    //     JSON.parse(localStorage.getItem("commonTick")) = [];
+    // }
+    if(JSON.parse(localStorage.getItem("todayTick")) ==null && JSON.parse(localStorage.getItem("commonTick")) !=null){
+        let taskDone = JSON.parse(localStorage.getItem("commonTick")).length;
+
+        let totalTask = JSON.parse(localStorage.getItem("commonArray")).length;
+    
+        dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
+        weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
+        monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
+        yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
+    }
+
+    if(JSON.parse(localStorage.getItem("todayTick")) !=null && JSON.parse(localStorage.getItem("commonTick")) ==null){
+        let taskDone = JSON.parse(localStorage.getItem("todayTick")).length;
+
+        let totalTask = JSON.parse(localStorage.getItem("todayArray")).length;
+    
+        dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
+        weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
+        monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
+        yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
+    }
+
     if(JSON.parse(localStorage.getItem("todayTick")) !=null &&  JSON.parse(localStorage.getItem("commonTick")) !=null){
         let taskDone = JSON.parse(localStorage.getItem("todayTick")).length + JSON.parse(localStorage.getItem("commonTick")).length;
 
