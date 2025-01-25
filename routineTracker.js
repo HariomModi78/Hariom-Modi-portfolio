@@ -266,23 +266,33 @@ console.log(day);
 localStorage.setItem("currentDay",day);
 localStorage.setItem("nextDate",parseInt(localStorage.getItem("currentDay"))+1);
 console.log(localStorage.getItem("nextDate"));
-let monthly = [];
-
-if(day==localStorage.getItem("nextDate") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
+let monthlyTodayTick = [];
+let monthlyCommonTick = [];
+let monthlyTodayArray = [];
+let monthlyCommonArray= [];
+// localStorage.setItem("nextDate",25)
+if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
     console.log("working")
-    monthly[0] = JSON.parse(localStorage.getItem("todayTick")).length; // completed today task
-    monthly[1] = JSON.parse(localStorage.getItem("commonTick")).length; //completed common task
-    monthly[2] = JSON.parse(localStorage.getItem("todayArray")).length; //total today task
-    monthly[3] = JSON.parse(localStorage.getItem("commonArray")).length; //total common task
-    console.log(monthly[0]);
-    console.log(monthly[1]);
-    console.log(monthly[2]);
-    console.log(monthly[3]);
-    localStorage.setItem("monthly",JSON.stringify(monthly));
-    JSON.parse(localStorage.getItem())
-    localStorage.setItem("todayTick",JSON.parse(null));
-    localStorage.setItem("commonTick",JSON.parse(null));
-    localStorage.setItem("todayArray",JSON.parse(null));
-    localStorage.setItem("commonArray",JSON.parse(null));
+    monthlyTodayTick = JSON.parse(localStorage.getItem("monthlyTodayTick")) || [];
+    monthlyCommonTick = JSON.parse(localStorage.getItem("monthlyCommonTick")) || [];
+    monthlyTodayArray = JSON.parse(localStorage.getItem("monthlyTodayArray")) || [];
+    monthlyCommonArray = JSON.parse(localStorage.getItem("monthlyCommonArray")) || [];
+
+    monthlyTodayTick.push(JSON.parse(localStorage.getItem("todayTick"))); // completed today task
+    monthlyCommonTick.push(JSON.parse(localStorage.getItem("commonTick"))); //completed common task
+    monthlyTodayArray.push(JSON.parse(localStorage.getItem("todayArray"))); //total today task
+    monthlyCommonArray.push(JSON.parse(localStorage.getItem("commonArray"))); //total common task
+    console.log(monthlyTodayTick);
+    console.log(monthlyCommonTick);
+    console.log(monthlyTodayArray);
+    console.log(monthlyCommonArray);
+    localStorage.setItem("monthlyTodayTick",JSON.stringify(monthlyTodayTick));
+    localStorage.setItem("monthlyCommonTick",JSON.stringify(monthlyCommonTick));
+    localStorage.setItem("monthlyTodayArray",JSON.stringify(monthlyTodayArray));
+    localStorage.setItem("monthlyCommonArray",JSON.stringify(monthlyCommonArray));
+    localStorage.setItem("todayTick",JSON.stringify(null));
+    localStorage.setItem("commonTick",JSON.stringify(null));
+    localStorage.setItem("todayArray",JSON.stringify(null));
+    localStorage.setItem("commonArray",JSON.stringify(null));
     console.log(JSON.parse(localStorage.getItem("todayArray")));
  }
