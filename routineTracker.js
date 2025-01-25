@@ -11,7 +11,7 @@ window.location.href = "#today";
 page = "Today Task";
 addButton.classList = "addButton"
 input.classList.remove("inputjs");
-
+ 
 })
 
 let commonBox = document.querySelector("#commonBox");
@@ -245,4 +245,44 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
         yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
     }
 
-   
+let dateDiv = document.getElementsByClassName("date");
+
+let date = new Date();
+
+// Format the date and time in 12-hour format
+let modefiedDate = date.toLocaleString('default',{
+day:'2-digit',
+month:'2-digit',
+year:'numeric'
+})
+for(let i=0;i<dateDiv.length;i++){
+    dateDiv[i].innerText = modefiedDate;
+}
+
+let day = new Date().toLocaleString('default',{
+    day:'2-digit'
+})
+console.log(day);
+localStorage.setItem("currentDay",day);
+localStorage.setItem("nextDate",parseInt(localStorage.getItem("currentDay"))+1);
+console.log(localStorage.getItem("nextDate"));
+let monthly = [];
+
+if(day==localStorage.getItem("nextDate") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
+    console.log("working")
+    monthly[0] = JSON.parse(localStorage.getItem("todayTick")).length; // completed today task
+    monthly[1] = JSON.parse(localStorage.getItem("commonTick")).length; //completed common task
+    monthly[2] = JSON.parse(localStorage.getItem("todayArray")).length; //total today task
+    monthly[3] = JSON.parse(localStorage.getItem("commonArray")).length; //total common task
+    console.log(monthly[0]);
+    console.log(monthly[1]);
+    console.log(monthly[2]);
+    console.log(monthly[3]);
+    localStorage.setItem("monthly",JSON.stringify(monthly));
+    JSON.parse(localStorage.getItem())
+    localStorage.setItem("todayTick",JSON.parse(null));
+    localStorage.setItem("commonTick",JSON.parse(null));
+    localStorage.setItem("todayArray",JSON.parse(null));
+    localStorage.setItem("commonArray",JSON.parse(null));
+    console.log(JSON.parse(localStorage.getItem("todayArray")));
+ }
