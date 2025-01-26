@@ -263,7 +263,9 @@ let day = new Date().toLocaleString('default',{
     day:'2-digit'
 })
 console.log(day);
-localStorage.setItem("currentDay",day);
+if(localStorage.getItem("currentDay") == null){
+    localStorage.setItem("currentDay",day);
+}
 localStorage.setItem("nextDate",parseInt(localStorage.getItem("currentDay"))+1);
 console.log(localStorage.getItem("nextDate"));
 let monthlyTodayTick = [];
@@ -295,4 +297,5 @@ if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("t
     localStorage.setItem("todayArray",JSON.stringify(null));
     localStorage.setItem("commonArray",JSON.stringify(null));
     console.log(JSON.parse(localStorage.getItem("todayArray")));
+    localStorage.setItem("currentDay",day);
  }
