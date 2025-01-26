@@ -68,6 +68,16 @@ button{
     text-align: center;
     justify-content: space-evenly;
 }
+.date{
+    height: 10%;
+    width: 60%;
+    font-weight: 900;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid white; */
+}
 .checkBox{
     height: 80%;
     width: 10%;
