@@ -22,6 +22,19 @@ html,body{
     text-align: center;
     justify-content: space-evenly;
 }
+.newCompleteDate{
+    height: 7%;
+    width: 90%;
+    /* border: 1px solid white; */
+    margin-top: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
 .complete,.incomplete{
     height: 7%;
     width: 70%;
