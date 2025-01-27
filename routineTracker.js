@@ -11,7 +11,7 @@ window.location.href = "#today";
 page = "Today Task";
 addButton.classList = "addButton"
 input.classList.remove("inputjs");
- 
+
 })
 
 let commonBox = document.querySelector("#commonBox");
@@ -203,7 +203,6 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
 
     let dailyPercentage = document.querySelector(".dailyPercentage");
     let weeklyPercentage = document.querySelector(".weeklyPercentage");
-    let monthlyPercentage = document.querySelector(".monthlyPercentage");
     let yearlyPercentage = document.querySelector(".yearlyPercentage");
 
     // if(JSON.parse(localStorage.getItem("todayTick")) ==null){
@@ -212,38 +211,17 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
     // if(JSON.parse(localStorage.getItem("commonTick")) ==null){
     //     JSON.parse(localStorage.getItem("commonTick")) = [];
     // }
-    if(JSON.parse(localStorage.getItem("todayTick")) ==null && JSON.parse(localStorage.getItem("commonTick")) !=null){
-        let taskDone = JSON.parse(localStorage.getItem("commonTick")).length;
-
-        let totalTask = JSON.parse(localStorage.getItem("commonArray")).length;
     
-        dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
-        weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
-        monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
-        yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
-    }
 
-    if(JSON.parse(localStorage.getItem("todayTick")) !=null && JSON.parse(localStorage.getItem("commonTick")) ==null){
+    if(JSON.parse(localStorage.getItem("todayTick")) !=null){
         let taskDone = JSON.parse(localStorage.getItem("todayTick")).length;
 
         let totalTask = JSON.parse(localStorage.getItem("todayArray")).length;
     
         dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
-        weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
-        monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
-        yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
+
     }
 
-    if(JSON.parse(localStorage.getItem("todayTick")) !=null &&  JSON.parse(localStorage.getItem("commonTick")) !=null){
-        let taskDone = JSON.parse(localStorage.getItem("todayTick")).length + JSON.parse(localStorage.getItem("commonTick")).length;
-
-        let totalTask = JSON.parse(localStorage.getItem("todayArray")).length + JSON.parse(localStorage.getItem("commonArray")).length;
-    
-        dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
-        weeklyPercentage.innerText = (parseInt(dailyPercentage.innerText)/7).toFixed(2) + "%"
-        monthlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/30).toFixed(2) + "%"
-        yearlyPercentage.innerText = (parseInt(dailyPercentage.innerText)/365).toFixed(2) + "%"
-    }
 
 let dateDiv = document.getElementsByClassName("date");
 
@@ -274,6 +252,10 @@ let monthlyTodayArray = [];
 let monthlyCommonArray= [];
 let monthlyTodayIncomplete = [];
 let monthlyTodayDate = [];
+let currentAvg = 0;
+
+
+
 let tarik = new Date();
 tarik = tarik.toLocaleString('default',{
     day: "2-digit",
@@ -320,7 +302,13 @@ if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("t
     console.log(JSON.parse(localStorage.getItem("todayArray")));
     localStorage.setItem("currentDay",day);
 
-    
+    if(JSON.parse(localStorage.getItem("todayTick")) !=null){
+        for(let i=0;i<JSON.parse(localStorage.getItem("monthlyTodayArray")).length;i++){
+            currentAvg = currentAvg + (JSON.parse(localStorage.getItem("monthlyTodayArray"))[i].length/ JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length)*100;
+        }
+        currentAvg = currentAvg/JSON.parse(localStorage.getItem("monthlyTodayArray")).length;
+        weeklyPercentage.innerText = currentAvg+"%";
+    }
 
  }
 
@@ -342,13 +330,15 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
         newComplete.classList = "newCompleteDate";
         completed.appendChild(newComplete);
         newComplete.innerText = JSON.parse(localStorage.getItem("monthlyTodayDate"))[i];
-    console.log(i + " bar");
+        console.log(i + " bar");
     for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length;j++){
         let newComplete = document.createElement("div");
         newComplete.classList = "newComplete";
         completed.appendChild(newComplete);
         newComplete.innerText = JSON.parse(localStorage.getItem("monthlyTodayArray"))[i][JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j]];
-        
+        let checkBox = document.createElement("div");
+                checkBox.classList = "checkBox tick";
+                newComplete.appendChild(checkBox);
 
     }
     
