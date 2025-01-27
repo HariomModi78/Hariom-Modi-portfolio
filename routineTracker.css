@@ -9,6 +9,60 @@ html,body{
     overflow: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.newComplete{
+    height: 5%;
+    width: 90%;
+    border: 1px solid white;
+    margin-top: 10px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.complete,.incomplete{
+    height: 7%;
+    width: 70%;
+    border-radius: 10px;
+    margin: 20px;
+    border: 1px solid white;
+    box-shadow:2px 5px 3000px rgb(3, 74, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    color: white;
+    
+}
+#completed,#incompleted{
+    height: 87%;
+    width: 100%;
+    background-color: black;
+    /* background-color: blue; */
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+.fake{
+    height: 12%;
+    width: 100%;
+    background: black;
+}
+.alert{
+    height: 10%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid white;
+}
 .input{
     position: fixed;
     height: 50%;
