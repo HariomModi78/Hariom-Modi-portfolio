@@ -221,12 +221,17 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
         dailyPercentage.innerText = ((taskDone/totalTask)*100).toFixed(2) + "%";
         
     }
-let sum = 0;
+
+    if(JSON.parse(localStorage.getItem("currentPercentage"))!=null){
+        // JSON.parse(localStorage.getItem("currentPercentage")).length = 0;
+        let sum = 0;
         for(let i=0;i<JSON.parse(localStorage.getItem("currentPercentage")).length;i++){
             sum = sum + JSON.parse(localStorage.getItem("currentPercentage"))[i];
         }
         console.log( "arr = "+sum);
-        currentPercentage.innerText = (sum/JSON.parse(localStorage.getItem("currentPercentage")).length).toFixed(2) + "%"
+        currentPercentage.innerText = (sum/JSON.parse(localStorage.getItem("currentPercentage")).length).toFixed(2) + "%";
+    }
+
         
 
 
