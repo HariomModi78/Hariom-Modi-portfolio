@@ -145,7 +145,7 @@ button{
     align-items: center;
     /* border: 2px solid white; */
 }
-.checkBox{
+.checkBox{ 
     height: 80%;
     width: 10%;
     background-color: white;
@@ -178,7 +178,7 @@ h1{
     color:white;
     text-align: center;
 }
-#today,#track,#common,#more,#dailyTrack,#weeklyTrack,#monthlyTrack,#yearlyTrack{
+#today,#track,#common,#more,#dailyTrack,#currentTrack{
     height: 100%;
     width: 100%;
     background-color: black;
@@ -196,7 +196,7 @@ h1{
     margin-top: 40px;
     border: 15px solid white;
 }
-.dailyPercentage,.weeklyPercentage,.monthlyPercentage,.yearlyPercentage{
+.dailyPercentage,.currentPercentage{
     height: 7%;
     width: 40%;
     display: flex;
@@ -270,7 +270,7 @@ h1{
     background-color: green;
 }
 
-.daily,.weekly,.monthly,.yearly{
+.daily,.current{
     height: 7%;
     width: 70%;
     border-radius: 10px;
