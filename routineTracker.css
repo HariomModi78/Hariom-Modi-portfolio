@@ -158,6 +158,12 @@ button{
     background-size: contain;
     /* background-color: green; */
 }
+.wrongTick{
+    background: url(cross.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 .wait{
     background: url(hourglass.gif);
     background-position: center;
