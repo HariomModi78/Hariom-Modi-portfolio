@@ -21,21 +21,19 @@
         <div class="addButton"><p>+</p></div>
         <div class="bottom">
             <div class="bottomBox" id="todayBox"><i class="ri-list-check-3"></i><p>Today Task</p></div>
-            <div class="bottomBox" id="commonBox"><i class="ri-indent-decrease"></i><p>Common Task</p></div>
+            <div class="bottomBox" id="commonBox"><i class="ri-indent-decrease"></i><p>Routine Task</p></div>
             <div class="bottomBox" id="trackBox"><i class="ri-progress-6-line"></i><p>Track</p></div>
             <div class="bottomBox" id="moreBox"><i class="ri-more-fill"></i><p>History</p></div>
         </div>
     </div>
     <div id="common">
-        <h1>Common Task</h1>
+        <h1>Daily Routine Task</h1>
         <div class="date"></div>
     </div>
     <div id="track">
         <h1>Task Track</h1>
-        <a class="daily" href="#dailyTrack">Daily</a>
-        <a class="weekly" href="#weeklyTrack">Weekly</a>
-        <a class="monthly" href="#monthlyTrack">Monthly</a>
-        <a class="yearly" href="#yearlyTrack">Yearly</a>
+        <a class="daily" href="#dailyTrack">Today</a>
+        <a class="current" href="#currentTrack">Current</a>
     </div>
     <div id="more">
         <h1>History</h1>
@@ -58,21 +56,12 @@
         <div class="circle"></div>
         <div class="dailyPercentage">0%</div>
     </div>
-    <div id="weeklyTrack">
-        <h1>Weekly Task Tracker</h1>
+    <div id="currentTrack">
+        <h1>Current Task Tracker</h1>
         <div class="circle"></div>
-        <div class="weeklyPercentage">0%</div>
-    </div>
-    <div id="monthlyTrack">
-        <h1>Monthly Task Tracker</h1>
-        <div class="circle"></div>
-        <div class="monthlyPercentage">0%</div>
-    </div>
-    <div id="yearlyTrack">
-        <h1>Yearly Task Tracker</h1>
-        <div class="circle"></div>
-        <div class="yearlyPercentage">0%</div>
-    </div>
+        <div class="currentPercentage">0%</div>
+    </div> 
+
     <script src="routineTracker.js"></script>
 </body>
 </html>
