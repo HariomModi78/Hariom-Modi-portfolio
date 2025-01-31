@@ -76,7 +76,7 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
     if(page=="Today Task" && inputValue.value.trim() != ""){  // jab today task page par hoga tab
         
         todayArray = JSON.parse(localStorage.getItem("todayArray")) || [];  //todayArray main purani values aa jayege
-
+            window.location.href = "routineTracker.html"
             inputValue = document.querySelector("#input");//inputValue ko feth kar lea
             todayArray.push(inputValue.value); // array main push kar dea 
         localStorage.setItem("todayArray",JSON.stringify(todayArray)); //fir local main array ko svae kar dea
@@ -95,6 +95,7 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
         }
 
         else if(inputValue.value.trim() != ""){
+            window.location.href = "routineTracker.html";
                 inputValue = document.querySelector("#input");
                 commonArray = JSON.parse(localStorage.getItem("commonArray")) || [];
                 commonArray.push(inputValue.value);
