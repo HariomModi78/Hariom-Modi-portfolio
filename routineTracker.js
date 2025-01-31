@@ -288,7 +288,7 @@ console.log(localStorage.getItem("previousDate"));
 localStorage.setItem("nextDate",25)
 if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
     console.log("working");
-    
+    // window.location.href= "routineTracker.html";
     let taskDone = JSON.parse(localStorage.getItem("todayTick")).length;
 
         let totalTask = JSON.parse(localStorage.getItem("todayArray")).length;
@@ -321,7 +321,23 @@ if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("t
     localStorage.setItem("monthlyTodayArray",JSON.stringify(monthlyTodayArray));
     localStorage.setItem("monthlyCommonArray",JSON.stringify(monthlyCommonArray));
 
-    
+    monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayArray"));
+for(let i=0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
+    for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length;j++){
+        // monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayIncomplete")) || [];
+            monthlyTodayIncomplete[i].splice(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j],1,"Completed")[0];
+       
+            
+
+        console.log( (parseInt(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j])) )
+        localStorage.setItem("monthlyTodayIncomplete",JSON.stringify(monthlyTodayIncomplete));
+        // console.log(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j]);
+
+    }
+}
+console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
+
+
     localStorage.setItem("todayTick",JSON.stringify(null));
     localStorage.setItem("commonTick",JSON.stringify(null));
     localStorage.setItem("todayArray",JSON.stringify(null));
@@ -363,21 +379,23 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
     
 }
 
+console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
 
 console.log(JSON.parse(localStorage.getItem("monthlyTodayArray")))
+console.log(JSON.parse(localStorage.getItem("monthlyTodayTick")))
 
-monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayArray"));
-for(let i=0;i<JSON.parse(localStorage.getItem("monthlyTodayArray")).length;i++){
-    for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length;j++){
-        // monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayIncomplete")) || [];
-            monthlyTodayIncomplete[i].splice(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j],1)[0];
+// monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayArray"));
+// for(let i=0;i<JSON.parse(localStorage.getItem("monthlyTodayArray")).length;i++){
+//     for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length;j++){
+//         // monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayIncomplete")) || [];
+//             monthlyTodayIncomplete[i].splice(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j],1)[0];
 
-        localStorage.setItem("monthlyTodayIncomplete",JSON.stringify(monthlyTodayIncomplete));
-        // console.log(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j]);
+//         localStorage.setItem("monthlyTodayIncomplete",JSON.stringify(monthlyTodayIncomplete));
+//         // console.log(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j]);
 
-    }
-}
-console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
+//     }
+// }
+// console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
 
 
 for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
@@ -385,16 +403,26 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
         newComplete.classList = "newCompleteDate";
         incompleted.appendChild(newComplete);
         newComplete.innerText = JSON.parse(localStorage.getItem("monthlyTodayDate"))[i];
-        console.log(i + " bar");
+        // console.log(i + " bar");
     for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayIncomplete"))[i].length;j++){
-        let newComplete = document.createElement("div");
-        newComplete.classList = "newComplete";
-        incompleted.appendChild(newComplete);
-        newComplete.innerText = JSON.parse(localStorage.getItem("monthlyTodayIncomplete"))[i][j];
-        let checkBox = document.createElement("div");
-                checkBox.classList = "checkBox wrongTick";
-                newComplete.appendChild(checkBox);
 
+
+        if(JSON.parse(localStorage.getItem("monthlyTodayIncomplete"))[i][j] == "Completed"){
+            console.log("completed")
+        }
+        else{
+            let newComplete = document.createElement("div");
+            newComplete.classList = "newComplete";
+            incompleted.appendChild(newComplete);
+            newComplete.innerText = JSON.parse(localStorage.getItem("monthlyTodayIncomplete"))[i][j];
+            let checkBox = document.createElement("div");
+                    checkBox.classList = "checkBox wrongTick";
+                    newComplete.appendChild(checkBox);
+        }
+            
+     
+        
+        
     }
     
 }
