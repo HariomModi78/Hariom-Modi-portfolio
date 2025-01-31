@@ -80,7 +80,7 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
             inputValue = document.querySelector("#input");//inputValue ko feth kar lea
             todayArray.push(inputValue.value); // array main push kar dea 
         localStorage.setItem("todayArray",JSON.stringify(todayArray)); //fir local main array ko svae kar dea
-            console.log(JSON.parse(localStorage.getItem("todayArray")));
+            // console.log(JSON.parse(localStorage.getItem("todayArray")));
             let newDiv = document.createElement("div");  // new div create kar dea
             newDiv.classList = "newDiv"; //class dai de
             
@@ -106,7 +106,7 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
                 newDiv.innerText = inputValue.value;
                 inputValue.value = "";
                 common.appendChild(newDiv);
-                console.log(JSON.parse(localStorage.getItem("commonArray")));
+                // console.log(JSON.parse(localStorage.getItem("commonArray")));
                 let checkBox = document.createElement("div");
                 checkBox.classList = "checkBox";
                 newDiv.appendChild(checkBox);
@@ -157,7 +157,7 @@ for(let i=0;i<todayTaskBox.length;i++){
             todayTick = JSON.parse(localStorage.getItem("todayTick")) || [];
             todayTick.push(i);
             localStorage.setItem("todayTick",JSON.stringify(todayTick));
-            console.log(JSON.parse(localStorage.getItem("todayTick")));
+            // console.log(JSON.parse(localStorage.getItem("todayTick")));
     }
 
         })
@@ -172,7 +172,7 @@ for(let i=0;i<commonTaskBox.length;i++){
         commonTick = JSON.parse(localStorage.getItem("commonTick")) || [];
         commonTick.push(i);
         localStorage.setItem("commonTick",JSON.stringify(commonTick));
-        console.log(JSON.parse(localStorage.getItem("commonTick")));
+        // console.log(JSON.parse(localStorage.getItem("commonTick")));
 
     }
 
@@ -185,7 +185,7 @@ if(JSON.parse(localStorage.getItem("commonTick"))!=null ){
 
         commonTaskBox[JSON.parse(localStorage.getItem("commonTick"))[i]].classList.add("tick");
         commonTaskBox[JSON.parse(localStorage.getItem("commonTick"))[i]].classList.remove("wait");
-        console.log("Tick = "+ JSON.parse(localStorage.getItem("commonTick"))[i])
+        // console.log("Tick = "+ JSON.parse(localStorage.getItem("commonTick"))[i])
     
     }
     
@@ -202,17 +202,10 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
     
 }
 
-    console.log("Tick =" + JSON.parse(localStorage.getItem("todayTick")))
+    // console.log("Tick =" + JSON.parse(localStorage.getItem("todayTick")))
 
     let dailyPercentage = document.querySelector(".dailyPercentage");
     let currentPercentage = document.querySelector(".currentPercentage");
-
-    // if(JSON.parse(localStorage.getItem("todayTick")) ==null){
-    //     JSON.parse(localStorage.getItem("todayTick")) = [];
-    // }
-    // if(JSON.parse(localStorage.getItem("commonTick")) ==null){
-    //     JSON.parse(localStorage.getItem("commonTick")) = [];
-    // }
 
     let percentage = [];
 
@@ -231,7 +224,7 @@ if(JSON.parse(localStorage.getItem("todayTick"))!=null ){
         for(let i=0;i<JSON.parse(localStorage.getItem("currentPercentage")).length;i++){
             sum = sum + JSON.parse(localStorage.getItem("currentPercentage"))[i];
         }
-        console.log( "arr = "+sum);
+        // console.log( "arr = "+sum);
         currentPercentage.innerText = (sum/JSON.parse(localStorage.getItem("currentPercentage")).length).toFixed(2) + "%";
     }
 
@@ -255,12 +248,12 @@ for(let i=0;i<dateDiv.length;i++){
 let day = new Date().toLocaleString('default',{
     day:'2-digit'
 })
-console.log(day);
+// console.log(day);
 if(localStorage.getItem("currentDay") == null){
     localStorage.setItem("currentDay",day);
 }
 localStorage.setItem("nextDate",parseInt(localStorage.getItem("currentDay"))+1);
-console.log(localStorage.getItem("nextDate"));
+// console.log(localStorage.getItem("nextDate"));
 let monthlyTodayTick = [];
 let monthlyCommonTick = [];
 let monthlyTodayArray = [];
@@ -286,11 +279,13 @@ if(tarik!=localStorage.getItem("previousDate") || JSON.parse(localStorage.getIte
     localStorage.setItem("monthlyTodayDate",JSON.stringify(monthlyTodayDate));
 }
 
-console.log(monthlyTodayDate);
-console.log(localStorage.getItem("previousDate"));
+// console.log(monthlyTodayDate);
+// console.log(localStorage.getItem("previousDate"));
 localStorage.setItem("nextDate",25)
 if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
-    console.log("working");
+    // console.log("working");
+
+
     window.location.href= "routineTracker.html";
     let taskDone = JSON.parse(localStorage.getItem("todayTick")).length;
 
@@ -315,10 +310,10 @@ if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("t
     monthlyCommonTick.push(JSON.parse(localStorage.getItem("commonTick"))); //completed common task
     monthlyTodayArray.push(JSON.parse(localStorage.getItem("todayArray"))); //total today task
     monthlyCommonArray.push(JSON.parse(localStorage.getItem("commonArray"))); //total common task
-    console.log(monthlyTodayTick);
-    console.log(monthlyCommonTick);
-    console.log(monthlyTodayArray);
-    console.log(monthlyCommonArray);
+    // console.log(monthlyTodayTick);
+    // console.log(monthlyCommonTick);
+    // console.log(monthlyTodayArray);
+    // console.log(monthlyCommonArray);
     localStorage.setItem("monthlyTodayTick",JSON.stringify(monthlyTodayTick));
     localStorage.setItem("monthlyCommonTick",JSON.stringify(monthlyCommonTick));
     localStorage.setItem("monthlyTodayArray",JSON.stringify(monthlyTodayArray));
@@ -332,20 +327,20 @@ for(let i=0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
        
             
 
-        console.log( (parseInt(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j])) )
+        // console.log( (parseInt(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j])) )
         localStorage.setItem("monthlyTodayIncomplete",JSON.stringify(monthlyTodayIncomplete));
         // console.log(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j]);
 
     }
 }
-console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
+// console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
 
 
     localStorage.setItem("todayTick",JSON.stringify(null));
     localStorage.setItem("commonTick",JSON.stringify(null));
     localStorage.setItem("todayArray",JSON.stringify(null));
-    localStorage.setItem("commonArray",JSON.stringify(null));
-    console.log(JSON.parse(localStorage.getItem("todayArray")));
+    // localStorage.setItem("commonArray",JSON.stringify(null));
+    // console.log(JSON.parse(localStorage.getItem("todayArray")));
     localStorage.setItem("currentDay",day);
  
  }
@@ -368,7 +363,7 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
         newComplete.classList = "newCompleteDate";
         completed.appendChild(newComplete);
         newComplete.innerText = JSON.parse(localStorage.getItem("monthlyTodayDate"))[i];
-        console.log(i + " bar");
+        // console.log(i + " bar");
     for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length;j++){
         let newComplete = document.createElement("div");
         newComplete.classList = "newComplete";
@@ -382,23 +377,12 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
     
 }
 
-console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
-
-console.log(JSON.parse(localStorage.getItem("monthlyTodayArray")))
-console.log(JSON.parse(localStorage.getItem("monthlyTodayTick")))
-
-// monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayArray"));
-// for(let i=0;i<JSON.parse(localStorage.getItem("monthlyTodayArray")).length;i++){
-//     for(let j=0;j<JSON.parse(localStorage.getItem("monthlyTodayTick"))[i].length;j++){
-//         // monthlyTodayIncomplete = JSON.parse(localStorage.getItem("monthlyTodayIncomplete")) || [];
-//             monthlyTodayIncomplete[i].splice(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j],1)[0];
-
-//         localStorage.setItem("monthlyTodayIncomplete",JSON.stringify(monthlyTodayIncomplete));
-//         // console.log(JSON.parse(localStorage.getItem("monthlyTodayTick"))[i][j]);
-
-//     }
-// }
 // console.log(JSON.parse(localStorage.getItem("monthlyTodayIncomplete")));
+
+// console.log(JSON.parse(localStorage.getItem("monthlyTodayArray")))
+// console.log(JSON.parse(localStorage.getItem("monthlyTodayTick")))
+
+
 
 
 for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
@@ -411,7 +395,7 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
 
 
         if(JSON.parse(localStorage.getItem("monthlyTodayIncomplete"))[i][j] == "Completed"){
-            console.log("completed")
+            // console.log("completed")
         }
         else{
             let newComplete = document.createElement("div");
