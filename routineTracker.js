@@ -150,6 +150,8 @@ for(let i=0;i<todayTaskBox.length;i++){
     todayTaskBox[i].classList.add("wait");
         todayTaskBox[i].addEventListener("click",()=>{
     if(!todayTaskBox[i].classList.contains("tick")){
+    window.location.href= "routineTracker.html";
+
             todayTaskBox[i].classList.remove("wait");
             todayTaskBox[i].classList.add("tick");
             todayTick = JSON.parse(localStorage.getItem("todayTick")) || [];
@@ -289,7 +291,7 @@ console.log(localStorage.getItem("previousDate"));
 localStorage.setItem("nextDate",25)
 if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
     console.log("working");
-    // window.location.href= "routineTracker.html";
+    window.location.href= "routineTracker.html";
     let taskDone = JSON.parse(localStorage.getItem("todayTick")).length;
 
         let totalTask = JSON.parse(localStorage.getItem("todayArray")).length;
