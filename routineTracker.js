@@ -117,7 +117,7 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
 ///////////////////////////////////
         document.addEventListener("keydown",(event)=>{   //save par click karne ke bad
             
-            if(event.code =="Enter"){
+            if(event.code ==="Enter"){
                 if(page=="Today Task" && inputValue.value.trim() != ""){  // jab today task page par hoga tab
                 
                     todayArray = JSON.parse(localStorage.getItem("todayArray")) || [];  //todayArray main purani values aa jayege
