@@ -92,6 +92,7 @@ html,body{
 }
 .inputjs{
     animation: slide 100ms linear forwards;
+    z-index: 1;
 }
 @keyframes slide{
     100%{
