@@ -68,7 +68,7 @@ let commonTick = [];
 addButton.addEventListener("click",()=>{
    
     input.classList.toggle("inputjs");
-    
+    inputValue.focus();
 })
 
 save.addEventListener("click",()=>{   //save par click karne ke bad
@@ -114,6 +114,55 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
         }
         })
 
+///////////////////////////////////
+        document.addEventListener("keydown",(event)=>{   //save par click karne ke bad
+            
+            if(event.code =="Enter"){
+                if(page=="Today Task" && inputValue.value.trim() != ""){  // jab today task page par hoga tab
+                
+                    todayArray = JSON.parse(localStorage.getItem("todayArray")) || [];  //todayArray main purani values aa jayege
+                        window.location.href = "routineTracker.html"
+                        inputValue = document.querySelector("#input");//inputValue ko feth kar lea
+                        todayArray.push(inputValue.value); // array main push kar dea 
+                    localStorage.setItem("todayArray",JSON.stringify(todayArray)); //fir local main array ko svae kar dea
+                        // console.log(JSON.parse(localStorage.getItem("todayArray")));
+                        let newDiv = document.createElement("div");  // new div create kar dea
+                        newDiv.classList = "newDiv"; //class dai de
+                        
+                        newDiv.innerText = inputValue.value; // jo input dea vo task ke inner Text main de dea
+                        inputValue.value = ""; // input ke value ko blaknk kar dea
+                        today.appendChild(newDiv);  // today page main new div ko append kar dea
+                        let checkBox = document.createElement("div");
+                        checkBox.classList = "checkBox";
+                        newDiv.appendChild(checkBox);
+            
+                        todayTaskBox.push(checkBox);
+                        input.classList.remove("inputjs");
+                    }
+            
+                    else if(inputValue.value.trim() != ""){
+                        window.location.href = "routineTracker.html";
+                            inputValue = document.querySelector("#input");
+                            commonArray = JSON.parse(localStorage.getItem("commonArray")) || [];
+                            commonArray.push(inputValue.value);
+                            localStorage.setItem("commonArray",JSON.stringify(commonArray));
+                
+                            let newDiv = document.createElement("div");
+                            newDiv.classList = "newDiv";
+                            newDiv.innerText = inputValue.value;
+                            inputValue.value = "";
+                            common.appendChild(newDiv);
+                            // console.log(JSON.parse(localStorage.getItem("commonArray")));
+                            let checkBox = document.createElement("div");
+                            checkBox.classList = "checkBox";
+                            newDiv.appendChild(checkBox);
+                                commonTaskBox.push(checkBox);
+                                input.classList.remove("inputjs");
+                    }
+            }
+            
+                })
+///////////////////////////
 
 if(JSON.parse(localStorage.getItem("commonArray"))!=null){
     for(let i=0;i<JSON.parse(localStorage.getItem("commonArray")).length;i++){
