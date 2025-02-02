@@ -117,7 +117,7 @@ save.addEventListener("click",()=>{   //save par click karne ke bad
 ///////////////////////////////////
         document.addEventListener("keydown",(event)=>{   //save par click karne ke bad
             
-            if(event.code ==="Enter"){
+            if(event.code =="Enter"){
                 if(page=="Today Task" && inputValue.value.trim() != ""){  // jab today task page par hoga tab
                 
                     todayArray = JSON.parse(localStorage.getItem("todayArray")) || [];  //todayArray main purani values aa jayege
@@ -331,7 +331,7 @@ if(tarik!=localStorage.getItem("previousDate") || JSON.parse(localStorage.getIte
 // console.log(monthlyTodayDate);
 // console.log(localStorage.getItem("previousDate"));
 localStorage.setItem("nextDate",25)
-if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
+if(day!=localStorage.getItem("currentDay")){
     // console.log("working");
 
 
