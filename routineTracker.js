@@ -462,3 +462,4 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
     }
     
 }
+console.log("Updated");
