@@ -331,7 +331,7 @@ if(tarik!=localStorage.getItem("previousDate") || JSON.parse(localStorage.getIte
 // console.log(monthlyTodayDate);
 // console.log(localStorage.getItem("previousDate"));
 localStorage.setItem("nextDate",25)
-if(day!=localStorage.getItem("currentDay")){
+if(day!=localStorage.getItem("currentDay") && JSON.parse(localStorage.getItem("todayTick"))!=null && JSON.parse(localStorage.getItem("commonTick"))!=null ){
     // console.log("working");
 
 
@@ -462,4 +462,3 @@ for(let i =0;i<JSON.parse(localStorage.getItem("monthlyTodayTick")).length;i++){
     }
     
 }
-console.log("Updated");
