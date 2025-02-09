@@ -231,7 +231,7 @@ main{
 }
 .upload{
     height: 60%;
-    border: 2px solid white;
+/*     border: 2px solid white; */
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(23, 23, 29);
@@ -241,7 +241,7 @@ main{
 .reel{
     height: 13rem;
     width:7rem;
-    border: 2px solid green;
+/*     border: 2px solid green; */
     flex-shrink: 0;
     background-color: rgb(23, 23, 29);
     overflow: hidden;
