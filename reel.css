@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(23, 23, 29);
+
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(23, 23, 29);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.like-animation{
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    /* background-color: green; */
+   left: 40vw;
+   top: 40vh;
+   background-image: url(heart.png);
+   background-position: center;
+   background-size:contain;
+   background-repeat: no-repeat;
+   /* mix-blend-mode: multiply; */
+   z-index: -2;
+}
+
+.like-animationjs{
+    /* transition: all 2s linear; */
+   animation: like 300ms linear forwards;
+}
+@keyframes like{
+    50%{
+        left:38vw;
+        height: 6rem;
+        width: 6rem;
+        z-index: 2000;
+    }
+    100%{
+        left:40vw;
+        height: 5rem;
+        width: 5rem;
+        z-index: 2000;
+    }
+}
+.reel-block{
+    height: 92vh;
+    width: 100vw;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 0.2fr;
+    grid-template-rows: 1fr;
+    flex-shrink: 0;
+}
+.scrolljs{
+    animation: scroll 250ms linear forwards;
+
+}
+@keyframes scroll{
+    100%{
+        transform: translateY(-100% ) ;
+    }
+}
+.video{
+    /* background-color: brown; */
+    background-color: rgba(102, 0, 255, 0.075);
+
+    /* border: 1px solid white; */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+
+}
+video{
+    height: 80%;
+    width: 100%;
+    border: 1px solid white;
+}
+.option{
+    background-color: rgba(102, 0, 255, 0.075);
+    color:white;
+    font-size: 2.7rem;
+    padding-top: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item{
+    margin-top: 1.8rem;
+    /* border: 1px solid white; */
+}
+.bottom-bar{
+    color:white;
+    background-color: white;
+    font-size: 1.5rem;
+    display: flex;
+    /* border: 1px solid yellow; */
+    height: 8%;
+    position: fixed;
+    bottom: 0rem;
+    width: 100%;
+    background-color: black;
+}
+.bottom-bar-item{
+   height: 100%;
+   width: calc(100%/5);
+   /* border: 1px solid yellow; */
+   display: flex;
+   /* padding-top: 0.3rem; */
+   justify-content: center;
+   align-items: center;
+}
