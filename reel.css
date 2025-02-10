@@ -76,13 +76,13 @@ main{
     overflow: hidden;
     display: flex;
     align-items: center;
-    border: 1px solid white;
+/*     border: 1px solid white; */
 
 }
 video{
     height: 80%;
     width: 100%;
-    border: 1px solid white;
+/*     border: 1px solid white; */
 }
 .option{
     background-color: rgba(102, 0, 255, 0.075);
