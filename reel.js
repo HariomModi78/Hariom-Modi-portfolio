@@ -3,7 +3,11 @@ let video = document.getElementsByTagName("video");
 let homeButton = document.querySelector(".ri-home-fill");
 homeButton.addEventListener("click",()=>{
     window.location.href = "main.html";
-})
+});
+let profileButton = document.querySelector(".ri-account-circle-line");
+profileButton.addEventListener("click",()=>{
+    window.location.href = "profile.html";
+});
 let number = 0;
 
 for(let i=0;i<reel.length;i++){
