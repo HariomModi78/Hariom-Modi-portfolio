@@ -1,5 +1,9 @@
 let reel = document.getElementsByClassName("reel-block");
 let video = document.getElementsByTagName("video");
+let homeButton = document.querySelector(".ri-home-fill");
+homeButton.addEventListener("click",()=>{
+    window.location.href = "main.html";
+})
 let number = 0;
 
 for(let i=0;i<reel.length;i++){
