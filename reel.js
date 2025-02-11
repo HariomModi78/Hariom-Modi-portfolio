@@ -9,7 +9,40 @@ profileButton.addEventListener("click",()=>{
     window.location.href = "profile.html";
 });
 let number = 0;
+let startY = 0;
 
+// For Mobile (Touch Events)
+document.addEventListener("touchstart", (event) => {
+    startY = event.touches[0].clientY; // Store initial touch position
+});
+
+document.addEventListener("touchmove", (event) => {
+    let endY = event.touches[0].clientY;
+    
+    if (startY > endY) {
+        console.log("Scrolling Down (Mobile)");
+        number = number -100;
+            for(let i=0;i<reel.length;i++){
+                reel[i].style.cssText = `transform: translateY(${-number}%) `;
+            }            
+        
+    } else {
+        console.log("Scrolling Up (Mobile)");
+        for(let i=0;i<reel.length;i++){
+                reel[i].style.cssText = `transform: translateY(${-number}%) `;
+            }
+            number = number +100;
+    }
+});
+
+// For Desktop (Mouse Wheel)
+document.addEventListener("wheel", (event) => {
+    if (event.deltaY > 0) {
+        console.log("Scrolling Down (Desktop)");
+    } else {
+        console.log("Scrolling Up (Desktop)");
+    }
+});
 for(let i=0;i<reel.length;i++){
     reel[i].addEventListener("click",(delt)=>{
 
